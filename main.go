@@ -12,7 +12,7 @@ const CharactersCount int = 140
 
 func main() {
 
-	token := os.Getenv("MESSAGE_SHORTENER_BOT")
+	token := os.Getenv("TOKEN")
 
 	bot, err := tbot.NewServer(token)
 	if err != nil {
@@ -46,7 +46,7 @@ func echoHandle(message *tbot.Message) {
 		// Creating telegra.ph page
 		page := Page{
 			AccessToken:   result["access_token"].(string),
-			Title:         "Shorted by MessageShortenerBot",
+			Title:         "Shorted+by+MessageShortenerBot",
 			AuthorName:    result["author_name"].(string),
 			AuthorURL:     "",
 			Content:       PrepareContent(message.Text()),
